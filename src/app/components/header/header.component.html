@@ -1,0 +1,38 @@
+<nav class="navbar">
+  <a class="brand" routerLink="/">
+    <img src="../../../assets/logo1.ico" alt="logo" />
+    <h2>Manage Stock</h2>
+  </a>
+
+  <ul class="links">
+    <li><a routerLink="/products">Lis Products</a></li>
+    <li><a routerLink="/products/new">Create Products</a></li>
+    <li><a routerLink="/logout">Logout</a></li>
+  </ul>
+
+  <ul class = "menu-left">        
+    <button class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></button>
+  </ul>
+
+  <div class="menu">			
+    <div class="menu_container">
+        <div class="menu_background"></div>
+        <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <div class="menu_content d-flex flex-column align-items-center justify-content-start">
+            <nav class="menu_nav">  
+                <h2 class="text-center title-menu">Manage Stock</h2>
+                <div class = "img-usuer">
+                    <a href = "home"> <img src="../../../assets/logo1.ico" alt="logo" /> </a>
+                </div>
+                <ul class="d-flex flex-column align-items-center justify-content-start">
+                     <h2 class="text-center title-ul">Propriedades</h2>   
+                     <li><a routerLink="/">Lis Products</a></li>
+                     <li><a routerLink="/moments/new">Create Products</a></li>
+                     <li><a routerLink="/about">Logout</a></li>
+                </ul>
+            </nav><!-- /.menu_nav -->
+        </div>
+    </div><!-- /.menu_container -->		 
+  </div><!-- /.menu -->
+
+</nav>
