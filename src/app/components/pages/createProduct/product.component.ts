@@ -34,7 +34,9 @@ export class ProductComponent implements OnInit {
   async createHandler(Product: Product) {
     const formData = new FormData();
 
-    formData.append('title', Product.title);
+    formData.append('name', Product.name);
+    formData.append('category', Product.category);
+    formData.append('count', String( Product.count) );
     formData.append('description', Product.description);
 
     if (Product.image) {

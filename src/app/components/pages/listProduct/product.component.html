@@ -1,3 +1,120 @@
 <div class="container">
-  <P> Ola </P>
+  <div class="container-title">
+    <p> Products </p>
+  </div>
+
+  <div class="products">
+
+    <div class="card-product">
+        <div class="card-add-img">
+          <a routerLink="/products/new" ><img src="https://www.school-system042.temiscira.app.br/views/templates/img/add.png" alt="add" /></a>
+        </div>
+    </div>
+
+    <div class="card-product">
+      <div class="card-img">
+        <img src="../../../assets/user.jpg" alt="logo" />
+      </div>
+      <div class="card-info">
+        <p class="row-card"><span>Nome:</span> Teste </p>
+        <p class="row-card"><span>Quantidade:</span> 100</p>
+        <p class="row-card"><span>Categoria:</span> Teste </p>
+      </div>
+      <div class="card-btn">
+        <a class="btn" data-toggle="modal" data-target="#updateEmployeeModal"> Editar </a>
+        <a class="btn-left" data-toggle="modal" data-target="#deleteEmployeeModal"> Deletar </a>
+      </div>
+    </div>
+
+    <div class="card-product">
+      <div class="card-img">
+        <img src="../../../assets/user.jpg" alt="logo" />
+      </div>
+      <div class="card-info">
+        <p class="row-card"><span>Nome:</span> Teste </p>
+        <p class="row-card"><span>Quantidade:</span> 100</p>
+        <p class="row-card"><span>Categoria:</span> Teste </p>
+      </div>
+      <div class="card-btn">
+        <a class="btn" data-toggle="modal" data-target="#updateEmployeeModal"> Editar </a>
+        <a class="btn-left" data-toggle="modal" data-target="#deleteEmployeeModal"> Deletar </a>
+      </div>
+    </div>
+
+    <div class="card-product">
+      <div class="card-img">
+        <img src="../../../assets/user.jpg" alt="logo" />
+      </div>
+      <div class="card-info">
+        <p class="row-card"><span>Nome:</span> Teste </p>
+        <p class="row-card"><span>Quantidade:</span> 100</p>
+        <p class="row-card"><span>Categoria:</span> Teste </p>
+      </div>
+      <div class="card-btn">
+        <a class="btn" data-toggle="modal" data-target="#updateEmployeeModal"> Editar </a>
+        <a class="btn-left" data-toggle="modal" data-target="#deleteEmployeeModal"> Deletar </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="clear"></div>
+
+  <!-- Edit Modal -->
+  <div class="modal fade" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateEmployeeModalLabel">Edit Product</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form #editForm="ngForm">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text"  name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
+                </div>
+                <input type="hidden" name="id" class="form-control" id="id" placeholder="Email">
+                <input type="hidden" name="userCode" class="form-control" id="userCode" placeholder="Email">
+                <div class="form-group">
+                  <label for="email">Categoria</label>
+                  <input type="email"  name="category" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Quantidade</label>
+                  <input type="text" name="count" class="form-control" id="jobTitle" placeholder="Job title">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                  <button  data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+                </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModelLabel">Delete Product</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete ?</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button  class="btn btn-danger" data-dismiss="modal">Yes</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
 </div>

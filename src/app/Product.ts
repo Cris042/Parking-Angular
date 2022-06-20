@@ -1,7 +1,9 @@
 export interface Product
 {
   id?: number;
-  title: string;
+  name: string;
+  count: number;
+  category: string;
   description: string;
   image: string;
   created_at?: string;

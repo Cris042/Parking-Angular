@@ -381,12 +381,17 @@
         padding-top: 2px;
         padding-left: 8px;
         margin-right: 20px;
-        margin-top: 10px;
+        margin-top: 0px;
     }
 
     .hamburger i 
     {
         font-size: 28px;
+    }
+
+    .brand img 
+    {
+       margin-top: -10px;
     }
 
    

@@ -1,0 +1,10 @@
+.card-from
+{
+   max-width: 45%;
+   margin-left: 27.5%;
+   margin-top: 16px;
+   border: 10px solid rgba(170, 164, 164, 0.5);
+   background: #f5f5f5;
+   padding: 30px;
+   margin-bottom: 100px;
+}

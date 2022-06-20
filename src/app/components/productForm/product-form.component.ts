@@ -23,7 +23,9 @@ export class ProductFormComponent implements OnInit {
       console.log(this.ProductData);
       this.ProductForm = new FormGroup({
         id: new FormControl(this.ProductData.id),
-        title: new FormControl(this.ProductData.title, [Validators.required]),
+        name: new FormControl(this.ProductData.name, [Validators.required]),
+        category: new FormControl(this.ProductData.category, [Validators.required]),
+        count: new FormControl(this.ProductData.count, [Validators.required]),
         description: new FormControl(this.ProductData.description, [
           Validators.required,
         ]),
@@ -32,15 +34,25 @@ export class ProductFormComponent implements OnInit {
     } else {
       this.ProductForm = new FormGroup({
         id: new FormControl(''),
-        title: new FormControl('', [Validators.required]),
+        name: new FormControl('', [Validators.required]),
+        category: new FormControl('', [Validators.required]),
+        count: new FormControl('', [Validators.required]),
         description: new FormControl('', [Validators.required]),
         image: new FormControl(''),
       });
     }
   }
 
-  get title() {
-    return this.ProductForm.get('title')!;
+  get name() {
+    return this.ProductForm.get('name')!;
+  }
+
+  get category() {
+    return this.ProductForm.get('cat')!;
+  }
+
+  get count() {
+    return this.ProductForm.get('quant')!;
   }
 
   get description() {

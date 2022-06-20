@@ -15,14 +15,14 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  // getProducts(): Observable<Response<Product[]>> {
-  //   return this.http.get<Response<Product[]>>(this.apiUrl);
-  // }
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.apiUrl);
+  }
 
-  // getProduct(id: number): Observable<Response<Product>> {
-  //   const url = `${this.apiUrl}/${id}`;
-  //   return this.http.get<Response<Product>>(url);
-  // }
+  getProduct(id: number): Observable<Product> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Product>(url);
+  }
 
   createProduct(formData: FormData): Observable<FormData> {
     return this.http.post<FormData>(this.apiUrl, formData);
