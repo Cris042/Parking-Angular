@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseApiUrl = environment.baseApiUrl;
+  private baseApiUrl = 'http://localhost:3333/';
   private apiUrl = `${this.baseApiUrl}api/Products`;
 
   constructor(private http: HttpClient) {}
