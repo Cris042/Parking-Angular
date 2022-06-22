@@ -36,7 +36,7 @@ export class ProductComponent implements OnInit {
 
     formData.append('name', Product.name);
     formData.append('category', Product.category);
-    formData.append('count', String( Product.count) );
+    formData.append('count', Product.count );
     formData.append('description', Product.description);
 
     if (Product.image) {
