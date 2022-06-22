@@ -8,3 +8,12 @@
    padding: 30px;
    margin-bottom: 100px;
 }
+
+@media (max-width: 720px)
+{
+  .card-from
+   {
+    max-width: 90%;
+    margin-left: 5%;
+  }
+}
