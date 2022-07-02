@@ -1,4 +1,4 @@
-<form class="card-from" (ngSubmit)="submit()" [formGroup]="ProductForm" #formDir="ngForm">
+<form class="card-from" (ngSubmit)="submit()" [formGroup]="ProductForm" #formDir="ngForm" #Form="ngForm">
   <div class="form-group">
     <input type="hidden" formControlName="id" />
   </div>
@@ -59,11 +59,15 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="image">Coloque a foto que mais marcou:</label>
+    
     <input
-      type="file"
-      (change)="onFileSelected($event)"
+      type="text"
+      class="form-control"
+      formControlName="imageUrl"
+      placeholder="Url da Imagem"
+      required
     />
+
   </div>
   <input class="btn btn-primary" type="submit" value="{{ btnText }}" />
 </form>

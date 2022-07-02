@@ -1,40 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 import { Product } from 'src/app/Product';
 
-import { environment } from 'src/environments/environment';
-
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class ProductService {
-  private baseApiUrl = 'http://localhost:3333/';
-  private apiUrl = `${this.baseApiUrl}api/Products`;
+  private baseApiUrl = 'http://localhost:8080';
+  private apiUrl = `${this.baseApiUrl}/employee`;
 
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+    return this.http.get<Product[]>(`${this.apiUrl}/all`);
   }
 
-  getProduct(id: number): Observable<Product> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Product>(url);
+  getProduct(id: number, formData: FormData ): Observable<Product> {
+    return this.http.put<Product>(`${this.apiUrl}/update/${id}`, formData);
   }
 
   createProduct(formData: FormData): Observable<FormData> {
-    return this.http.post<FormData>(this.apiUrl, formData);
+    return this.http.post<FormData>(`${this.apiUrl}/add`, formData);
   }
 
   removeProduct(id: number) {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete(url);
+    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
   }
-
-  updateProduct(id: number, formData: FormData): Observable<FormData> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.put<FormData>(url, formData);
-  }
+  
 }

@@ -7,38 +7,42 @@ import { Product } from 'src/app/Product';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css'],
 })
-export class ProductFormComponent implements OnInit {
+
+export class ProductFormComponent implements OnInit 
+{
   @Output() onSubmit = new EventEmitter<Product>();
   @Input() ProductData: Product | null = null;
   @Input() btnText!: string;
-
-  image?: File;
 
   ProductForm!: FormGroup;
 
   constructor() {}
 
-  ngOnInit(): void {
-    if (this.ProductData) {
+  ngOnInit(): void 
+  {
+    if (this.ProductData) 
+    {
       console.log(this.ProductData);
       this.ProductForm = new FormGroup({
-        id: new FormControl(this.ProductData.id),
+        id: new FormControl(""),
         name: new FormControl(this.ProductData.name, [Validators.required]),
         category: new FormControl(this.ProductData.category, [Validators.required]),
-        count: new FormControl(this.ProductData.count, [Validators.required]),
+        count: new FormControl( String( this.ProductData.count ), [Validators.required]),
         description: new FormControl(this.ProductData.description, [
           Validators.required,
         ]),
-        image: new FormControl(''),
+        imageUrl: new FormControl(this.ProductData.imageUrl),
       });
-    } else {
+    } 
+    else 
+    {
       this.ProductForm = new FormGroup({
-        id: new FormControl(''),
+        id: new FormControl(""),
         name: new FormControl('', [Validators.required]),
         category: new FormControl('', [Validators.required]),
         count: new FormControl('', [Validators.required]),
         description: new FormControl('', [Validators.required]),
-        image: new FormControl(''),
+        imageUrl: new FormControl(''),
       });
     }
   }
@@ -48,25 +52,26 @@ export class ProductFormComponent implements OnInit {
   }
 
   get category() {
-    return this.ProductForm.get('cat')!;
+    return this.ProductForm.get('category')!;
   }
 
   get count() {
-    return this.ProductForm.get('quant')!;
+    return this.ProductForm.get('count')!;
   }
 
   get description() {
     return this.ProductForm.get('description')!;
   }
 
-  onFileSelected(event: any) {
-    const file: File = event.target.files[0];
-
-    this.ProductForm.patchValue({ image: event.target.files[0] });
+  get imageUrl() {
+    return this.ProductForm.get('imageUrl')!;
   }
 
-  submit() {
-    if (this.ProductForm.invalid) {
+
+  submit() 
+  {
+    if (this.ProductForm.invalid) 
+    {
       return;
     }
 

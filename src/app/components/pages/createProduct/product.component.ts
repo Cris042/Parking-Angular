@@ -12,8 +12,7 @@ import { MessagesService } from 'src/app/services/messages/messages.service';
 
 export class ProductComponent implements OnInit {
 
-  btnText: string = 'Compartilhar!';
-  image?: File;
+  btnText: string = 'Cadastro!';
 
   constructor(
     private ProductService: ProductService,
@@ -23,25 +22,23 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onFileSelected(event: any) {
-    const file: File = event.target.files[0];
-
-    this.image = file;
-  }
-
   buildForm() {}
 
   async createHandler(Product: Product) {
     const formData = new FormData();
+    
+    formData.append("id", String( Product.id ));
+    formData.append("name", String( Product.name) );
+    formData.append("category", String( Product.category));
+    formData.append("count", String( Product.count ) );
+    formData.append("description", String(Product.description));
 
-    formData.append('name', Product.name);
-    formData.append('category', Product.category);
-    formData.append('count', Product.count );
-    formData.append('description', Product.description);
-
-    if (Product.image) {
-      formData.append('image', Product.image);
+    if (Product.imageUrl) 
+    {
+      formData.append('imageUrl', Product.imageUrl);
     }
+   
+
 
     await this.ProductService.createProduct(formData).subscribe();
 
