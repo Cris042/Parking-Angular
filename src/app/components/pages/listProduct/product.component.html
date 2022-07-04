@@ -14,22 +14,54 @@
       </div>
     </div>
   
-  <div *ngFor="let product of product" >
+  <div>
 
       <div class="card-product">
         <div class="card-img">
-            <img src="{{ product.imageUrl }}" alt="logo" />
+            <img src="https://app-gerenciar-estoque.herokuapp.com/assets/user.jpg" alt="logo" />
         </div>
         <div class="card-info">
-            <p class="row-card"><span>Nome:</span> {{ product.name }} </p>
-            <p class="row-card"><span>Quantidade:</span> {{ product.count }} </p>
-            <p class="row-card"><span>Categoria:</span> {{ product.category }} </p>
+            <p class="row-card"><span>Nome:</span> Teste </p>
+            <p class="row-card"><span>Quantidade:</span> 3</p>
+            <p class="row-card"><span>Categoria:</span> E uma categoria de teste </p>
         </div>
         <div class="card-btn">
             <a class="btn" data-toggle="modal" data-target="#updateEmployeeModal"> Editar </a>
             <a class="btn-left" data-toggle="modal" data-target="#deleteEmployeeModal"> Deletar </a>
         </div>
       </div>
+
+      <div class="card-product">
+        <div class="card-img">
+            <img src="https://app-gerenciar-estoque.herokuapp.com/assets/user.jpg" alt="logo" />
+        </div>
+        <div class="card-info">
+            <p class="row-card"><span>Nome:</span> Teste </p>
+            <p class="row-card"><span>Quantidade:</span> 3</p>
+            <p class="row-card"><span>Categoria:</span> E uma categoria de teste </p>
+        </div>
+        <div class="card-btn">
+            <a class="btn" data-toggle="modal" data-target="#updateEmployeeModal"> Editar </a>
+            <a class="btn-left" data-toggle="modal" data-target="#deleteEmployeeModal"> Deletar </a>
+        </div>
+      </div>
+
+      <div class="card-product">
+        <div class="card-img">
+            <img src="https://app-gerenciar-estoque.herokuapp.com/assets/user.jpg" alt="logo" />
+        </div>
+        <div class="card-info">
+            <p class="row-card"><span>Nome:</span> Teste </p>
+            <p class="row-card"><span>Quantidade:</span> 3</p>
+            <p class="row-card"><span>Categoria:</span> E uma categoria de teste </p>
+        </div>
+        <div class="card-btn">
+            <a class="btn" data-toggle="modal" data-target="#updateEmployeeModal"> Editar </a>
+            <a class="btn-left" data-toggle="modal" data-target="#deleteEmployeeModal"> Deletar </a>
+        </div>
+      </div>
+
+      
 
       <!-- Edit Modal -->
       <div class="modal fade" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
@@ -45,15 +77,15 @@
                 <form #editForm="ngForm">
                     <div class="form-group">
                       <label for="name"> Name</label>
-                      <input type="text" value="{{ product.name }}" class="form-control"name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
+                      <input type="text" value="" class="form-control"name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
                     </div>
                     <div class="form-group">
                       <label for="email"> Quantidade </label>
-                      <input type="number" value="{{ product.count }}"  name="category" class="form-control" id="email" placeholder="Email">
+                      <input type="number" value=""  name="category" class="form-control" id="email" placeholder="Email">
                     </div>
                     <div class="form-group">
                       <label for="phone"> Categoria </label>
-                      <input type="text" value="{{ product.category }}" name="count" class="form-control" id="jobTitle" placeholder="Job title">
+                      <input type="text" value="" name="count" class="form-control" id="jobTitle" placeholder="Job title">
                     </div>
                     <div class="modal-footer">
                       <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
